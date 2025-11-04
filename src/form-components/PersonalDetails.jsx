@@ -13,6 +13,7 @@ const PersonalDetails = () => {
     dob: personal.dob || "",
   });
   const [error, setError] = useState("");
+  const [isEmailValid, setIsEmailValid] = useState(true);
 
   const handleNext = () => {
     if (!details.fullName || !details.email || !details.phone || !details.dob) {
@@ -24,8 +25,20 @@ const PersonalDetails = () => {
       return;
     }
 
+    setError("");
     setPersonal(details);
     setCurrentStep(StepEnum.PROFESSIONAL);
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setDetails({ ...details, email: value });
+
+    if (value.includes("@") && value.includes(".")) {
+      setIsEmailValid(true);
+    } else {
+      setIsEmailValid(false);
+    }
   };
 
   return (
@@ -42,7 +55,8 @@ const PersonalDetails = () => {
         type="email"
         placeholder="Email"
         value={details.email}
-        onChange={(e) => setDetails({ ...details, email: e.target.value })}
+        onChange={handleEmailChange}
+        invalid={!isEmailValid}
       />
       <FormInput
         type="text"

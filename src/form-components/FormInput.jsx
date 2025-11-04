@@ -1,7 +1,7 @@
 import React from "react";
 import StyleCss from "./FormComponent.module.css";
 
-const FormInput = ({ type, placeholder, value, onChange }) => {
+const FormInput = ({ type, placeholder, value, onChange, invalid }) => {
   const today = new Date().toISOString().split("T")[0];
 
   return (
@@ -10,7 +10,9 @@ const FormInput = ({ type, placeholder, value, onChange }) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className={StyleCss["form__input"]}
+      className={`${StyleCss["form__input"]} ${
+        invalid ? StyleCss["form__input--invalid"] : ""
+      }`}
       {...(type === "date" && { max: today })}
     />
   );

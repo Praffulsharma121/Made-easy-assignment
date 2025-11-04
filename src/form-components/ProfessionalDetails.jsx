@@ -61,7 +61,6 @@ const ProfessionalDetails = () => {
   return (
     <div className={StyleCss["form-container"]}>
       <h2 className={StyleCss["form-title"]}>Professional Details</h2>
-
       <div className={StyleCss["form-group"]}>
         <label className={StyleCss["form-label"]}>Subjects</label>
         <div
