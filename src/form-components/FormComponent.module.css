@@ -1,0 +1,113 @@
+.form__section,
+.form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  padding: 24px;
+  gap: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.form__title,
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-label {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.form__input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  font-size: 14px;
+}
+
+.form__input:focus {
+  border-color: #888;
+}
+
+.form__actions,
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.form__btn,
+.btn-back,
+.btn-next {
+  flex: 1;
+  background: #333;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: background 0.2s ease;
+}
+
+.form__btn:hover,
+.btn-back:hover,
+.btn-next:hover {
+  background: #555;
+}
+
+.form__error {
+  color: red;
+  font-size: 13px;
+  text-align: center;
+}
+
+/* leave dropdown styling simple as requested */
+.dropdown {
+  position: relative;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.dropdown-display {
+  font-size: 14px;
+}
+
+.dropdown-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-top: 4px;
+  padding: 8px;
+  max-height: 150px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
